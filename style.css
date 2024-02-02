@@ -1,0 +1,185 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "DM Sans", sans-serif;
+    box-sizing: border-box;
+}
+
+body {
+    background: var(--cream);
+    font-size: 18px;
+}
+
+:root {
+    /* Colors */
+    --dark-brown: hsl(25, 47%, 15%);
+    --medium-brown: hsl(28, 10%, 53%);
+    --cream: hsl(27, 66%, 92%);
+    --pale-orange: hsl(33, 100%, 98%);
+    --soft-red: hsl(10, 79%, 65%);
+    --cyan: hsl(186, 34%, 60%);
+
+    /* Font-Weight */
+    --reg: 400;
+    --bold: 700;
+}
+
+.container {
+    width: 500px;
+    margin: auto auto;
+}
+
+.header {
+    background: var(--soft-red);
+    border-radius: 15px;
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 25px;
+    margin: 15px 0;
+}
+.balance p {
+    font-size: 13px;
+    font-weight: var(--reg);
+    padding-bottom: 5px;
+    color: var(--pale-orange);
+}
+.balance span {
+    font-size: 22px;
+    font-weight: var(--bold);
+    color: var(--pale-orange);
+}
+.logo {
+    width: 50px;
+}
+
+.data-wrapper {
+    background: var(--pale-orange);
+    margin: 15px 0;
+    border-radius: 15px;
+    padding: 15px 25px;
+}
+.data-wrapper h2 {
+    color: var(--dark-brown);
+    font-size: 25px;
+    padding-bottom: 30px;
+    font-weight: var(--bold);
+}
+.graph {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    padding: 25px 0;
+    height: auto;
+}
+.column {
+    text-align: center;
+    width: 12%;
+    cursor: pointer;
+}
+.column .bar {
+    width: 100%;
+    height: 52%;
+    background: var(--soft-red);
+    border-radius: 5px;
+}
+.column .bar:hover {
+    background: lightcoral;
+}
+.column p {
+    position: relative;
+    color: var(--medium-brown);
+    font-size: 15px;
+    padding-top: 10px;
+}
+.column .price {
+    font-size: 12px;
+    background: var(--dark-brown);
+    border-radius: 5px;
+    padding: 5px;
+    color: #fff;
+    font-weight: 400;
+    margin-bottom: 10px;
+    visibility: hidden;
+}
+.column.active .price {
+    visibility: visible;
+}
+#mon-bar {
+    height: 50px;
+}
+#tue-bar {
+    height: 100px;
+}
+#wed-bar {
+    height: 150px;
+    background: var(--cyan);
+}
+#wed-bar:hover {
+    background: lightblue;
+}
+#thu-bar {
+    height: 90px;
+}
+#fri-bar {
+    height: 70px;
+}
+#sat-bar {
+    height: 125px;
+}
+#sun-bar {
+    height: 80px;
+}
+
+.hr {
+    background: var(--cream);
+    width: 80%;
+    height: 1px;
+    margin: 25px auto;
+}
+
+.footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 25px 0px;
+}
+.left p {
+    color: var(--medium-brown);
+    font-size: 15px;
+    padding-bottom: 10px;
+}
+.left span {
+    font-size: 35px;
+    font-weight: var(--bold);
+}
+.right p {
+    color: var(--medium-brown);
+    font-size: 15px;
+    padding-top: 10px;
+}
+.right span {
+    font-weight: var(--bold);
+    display: flex;
+    justify-content: flex-end;
+}
+
+@media screen and (max-width: 530px) {
+    .container {
+        width: 90%;
+    }
+    .column p {
+        font-size: 12px;
+    }
+    .column .price {
+        font-size: 10px;
+        padding: 3px;
+    }
+    .footer p {
+        font-size: 12px;
+    }
+    .footer .left span {
+        font-size: 25px;
+    }
+}

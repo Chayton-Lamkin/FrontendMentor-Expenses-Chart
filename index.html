@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  
+  <title>Frontend Mentor | Expenses chart component</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    
+    <div class="header">
+      <div class="balance">
+        <p>My balance</p>
+        <span id="balance">$921.48</span>
+      </div>
+      <img src="images/logo.svg" alt="logo" class="logo">
+    </div>
+
+    <div class="data-wrapper">
+      <h2>Spending - Last 7 Days</h2>
+
+      <div class="graph">
+        <div class="column" id="mon">
+          <p class="price" id="mon-price"></p>
+          <div class="bar" id="mon-bar"></div>
+          <p>mon</p>
+        </div>
+        <div class="column" id="tue">
+          <p class="price" id="tue-price"></p>
+          <div class="bar" id="tue-bar"></div>
+          <p>tue</p>
+        </div>
+        <div class="column" id="wed">
+          <p class="price" id="wed-price"></p>
+          <div class="bar" id="wed-bar"></div>
+          <p>wed</p>
+        </div>
+        <div class="column" id="thu">
+          <p class="price" id="thu-price"></p>
+          <div class="bar" id="thu-bar"></div>
+          <p>thu</p>
+        </div>
+        <div class="column" id="fri">
+          <p class="price" id="fri-price"></p>
+          <div class="bar" id="fri-bar"></div>
+          <p>fri</p>
+        </div>
+        <div class="column" id="sat">
+          <p class="price" id="sat-price"></p>
+          <div class="bar" id="sat-bar"></div>
+          <p>sat</p>
+        </div>
+        <div class="column" id="sun">
+          <p class="price" id="sun-price"></p>
+          <div class="bar" id="sun-bar"></div>
+          <p>sun</p>
+        </div>
+      </div>
+
+      <div class="hr"></div>
+
+      <div class="footer">
+        <div class="left">
+          <p>Total this month</p>
+          <span id="total">$478.33</span>
+        </div>
+        <div class="right">
+          <span id="percent">+2.4%</span>
+          <p>from last month</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="#">Chayton Lamkin</a>.
+  </div>
+
+  <script>
+    
+    let spendingData = `[
+  {
+    "day": "mon",
+    "amount": 17.45
+  },
+  {
+    "day": "tue",
+    "amount": 34.91
+  },
+  {
+    "day": "wed",
+    "amount": 52.36
+  },
+  {
+    "day": "thu",
+    "amount": 31.07
+  },
+  {
+    "day": "fri",
+    "amount": 23.39
+  },
+  {
+    "day": "sat",
+    "amount": 43.28
+  },
+  {
+    "day": "sun",
+    "amount": 25.48
+  }
+]`
+
+  const column = document.querySelectorAll(".column");
+
+  const mon = document.getElementById("mon");
+  const tue = document.getElementById("tue");
+  const wed = document.getElementById("wed");
+  const thu = document.getElementById("thu");
+  const fri = document.getElementById("fri");
+  const sat = document.getElementById("sat");
+  const sun = document.getElementById("sun");
+
+  const monPrice = document.getElementById("mon-price");
+  const tuePrice = document.getElementById("tue-price");
+  const wedPrice = document.getElementById("wed-price");
+  const thuPrice = document.getElementById("thu-price");
+  const friPrice = document.getElementById("fri-price");
+  const satPrice = document.getElementById("sat-price");
+  const sunPrice = document.getElementById("sun-price");
+
+  column.forEach((i) => {
+    i.addEventListener("click", () => {
+      if(i == mon){
+        i.classList.toggle("active");
+        monPrice.innerHTML = ("$" + JSON.parse(spendingData)[0].amount);
+      } else if(i == tue){
+        i.classList.toggle("active");
+        tuePrice.innerHTML = ("$" + JSON.parse(spendingData)[1].amount);
+      } else if(i == wed){
+        i.classList.toggle("active");
+        wedPrice.innerHTML = ("$" + JSON.parse(spendingData)[2].amount);
+      } else if(i == thu){
+        i.classList.toggle("active");
+        thuPrice.innerHTML = ("$" + JSON.parse(spendingData)[3].amount);
+      } else if(i == fri){
+        i.classList.toggle("active");
+        friPrice.innerHTML = ("$" + JSON.parse(spendingData)[4].amount);
+      } else if(i == sat){
+        i.classList.toggle("active");
+        satPrice.innerHTML = ("$" + JSON.parse(spendingData)[5].amount);
+      } else if(i == sun){
+        i.classList.toggle("active");
+        sunPrice.innerHTML = ("$" + JSON.parse(spendingData)[6].amount);
+      }
+    })
+  })
+
+  </script>
+</body>
+</html>
